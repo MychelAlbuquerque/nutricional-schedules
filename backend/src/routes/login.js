@@ -1,9 +1,10 @@
 const express = require('express');
-const nameValidation = require('../middlewares/nameValidation');
+const emailValidation = require('../middlewares/emailValidation');
+const passwordValidation = require('../middlewares/passwordValidation');
 const router = express.Router();
 
 
-router.post('/', nameValidation, (req, res) => {
+router.post('/', emailValidation, passwordValidation, (req, res) => {
   return res.status(200).json();
 });
 
