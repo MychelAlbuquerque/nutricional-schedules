@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"name": "Ana",
+		"email": "asdf@sfdsf.com",
+		"birthDate": "12/12/1994",
+		"password": "123456"
+	},
+	{
+		"id": 2,
+		"name": "Ana",
+		"email": "asdf@sfdsf.com",
+		"birthDate": "12/12/1994",
+		"password": "123456"
+	},
+	{
+		"id": 3,
+		"name": "mychel",
+		"birthDate": "01/01/2001",
+		"email": "asdf@sf.com",
+		"password": "123456"
+	}
+]
