@@ -1,4 +1,6 @@
-node:
-  build: .
-  ports:
-    - "3000:3000"
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+      
