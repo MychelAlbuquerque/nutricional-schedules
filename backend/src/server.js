@@ -1,7 +1,9 @@
 const app = require('./app');
+const ip = require('ip');
+const PORT = process.env.SERVER_PORT || 3000;
 
 app.get('/', (req, res) =>{
-  res.send('Hello!');
+  res.send('Server UP!');
 });
 
-app.listen(3000, () => console.log('Online on port 3000'));
+app.listen(PORT, () => console.log(`Online on port ${ip}: ${PORT}`));
