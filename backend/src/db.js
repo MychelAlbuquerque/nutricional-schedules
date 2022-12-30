@@ -7,12 +7,33 @@ const mysqlConfig = {
   database: 'NutriDb'
 };
 
-const mysqlConnection = () =>{
-  const connection = mysql.createConnection(mysqlConfig);
-  connection.connect(function(err){
-    if(err) console.log(err);
+const connection = mysql.createConnection(mysqlConfig);
+const mysqlConnection = () => {
+  connection.connect(function (err) {
+    if (err) console.log(err);
     else console.log('MySql connected');
   });
 };
 
-module.exports = mysqlConnection;
+const createUsersTable = () => {
+  connection.connect(function (err) {
+    if (err) throw err;
+    const sql = `
+      CREATE TABLE IF NOT EXISTS users (
+        id INT NOT NULL AUTO_INCREMENT,
+        user_name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        birthdate DATE NOT NULL,
+        user_password VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+      ) ENGINE=INNODB;
+      `;
+    connection.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log('Users Table Created');
+    });
+  });
+};
+
+module.exports = { mysqlConnection, createUsersTable };

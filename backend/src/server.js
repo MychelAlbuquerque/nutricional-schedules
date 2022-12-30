@@ -1,5 +1,5 @@
 const app = require('./app');
-const mysqlConnection = require('./db');
+const {mysqlConnection, createUsersTable } = require('./db');
 
 
 app.get('/', (req, res) => {
@@ -9,3 +9,4 @@ app.get('/', (req, res) => {
 app.listen(3000, () => console.log('Online on port 3000'));
 
 mysqlConnection();
+createUsersTable();
