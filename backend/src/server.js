@@ -1,21 +1,5 @@
 const app = require('./app');
-const mysql = require('mysql2');
-
-const mysqlConfig = {
-  host: 'mysql_server',
-  user: 'admin',
-  password: 'root',
-  database: 'NutriDb'
-};
-
-const mysqlConnection = () =>{
-  const connection = mysql.createConnection(mysqlConfig);
-  connection.connect(function(err){
-    if(err) console.log(err);
-    else console.log('MySql Connected');
-  });
-};
-mysqlConnection();
+const mysqlConnection = require('./db');
 
 
 app.get('/', (req, res) => {
@@ -23,3 +7,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => console.log('Online on port 3000'));
+
+mysqlConnection();
