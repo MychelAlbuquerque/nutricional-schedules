@@ -1,8 +1,8 @@
 FROM node:alpine
 
-WORKDIR /usr/app/backend
+WORKDIR /usr/app/
 
-COPY /backend/package*.json ./
+COPY /package*.json ./
 
 RUN npm install -g nodemon
 
