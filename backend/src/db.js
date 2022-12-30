@@ -36,4 +36,23 @@ const createUsersTable = () => {
   });
 };
 
-module.exports = { mysqlConnection, createUsersTable };
+const insertUser = (body) => {
+  const date = body.birthDate.split('/').reverse().join('/');
+  connection.connect(function (err) {
+    if (err) throw err;
+    const sql = `
+      INSERT INTO users (user_name, email, birthdate, user_password) VALUES (
+        '${body.name}',
+        '${body.email}',
+        '${date}',
+        '${body.password}');`;
+    connection.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log('New user added');
+    });
+  });
+};
+
+
+
+module.exports = { mysqlConnection, createUsersTable, insertUser };
