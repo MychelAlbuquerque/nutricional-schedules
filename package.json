@@ -2,13 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "System for scheduling and managing nutritional appointments",
-  "main": "index.js",
+  "main": "backend/src/server.js",
   "scripts": {
     "test": "",
-    "start": "node src/server.js",
+    "start": "nodemon src/server.js",
     "dev": "nodemon src/server.js"
   },
-  "keywords": [],
+  "keywords": [ ],
   "author": "Mychel Albuquerque",
   "license": "ISC",
   "dependencies": {
@@ -17,6 +17,8 @@
     "mysql2": "^2.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3"
   }
 }

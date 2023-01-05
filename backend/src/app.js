@@ -7,7 +7,6 @@ const questions = require('./routes/questions');
 
 app.use(express.json());
 
-
 //Routes
 app.use('/register', register);
 app.use('/login', login);
