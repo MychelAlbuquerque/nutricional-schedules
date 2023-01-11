@@ -53,6 +53,17 @@ const insertUser = (body) => {
   });
 };
 
+const fetchUsers = () => {
+  connection.connect(function (err) {
+    if (err) throw err;
+    const sql = 'SELECT * FROM users';
+    connection.query(sql, function (err, result) {
+      if (err) throw err;
+      return(result);
+    });
+  });
+};
 
 
-module.exports = { mysqlConnection, createUsersTable, insertUser };
+
+module.exports = { mysqlConnection, createUsersTable, insertUser, fetchUsers };
